@@ -116,6 +116,7 @@ const YouTube = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              onError={(e) => console.error('YouTube embed error for video:', video.id, e)}
             ></iframe>
           </div>
         ))}

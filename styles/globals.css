@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: blue;
+}
+
+.social-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Mobile responsiveness for social links */
+@media (max-width: 768px) {
+    .social-links {
+        font-size: 10px; /* Smaller on tablets */
+        gap: 5px;
+        top: 5px;
+        right: 10px;
+        z-index: 3; /* Appear above profile pic */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        font-size: 8px; /* Even smaller on phones */
+        gap: 5px;
+        top: 5px;
+        right: 10px;
+        z-index: 3; /* Appear above profile pic */
+    }
+}

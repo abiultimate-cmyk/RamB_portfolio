@@ -50,7 +50,9 @@ export default function NatRotator({ items = [], intervalVd = 28000, intervalImg
                     ref={isCurrent ? currentVideoRef : null}
                     muted
                     playsInline
+                    controls
                     onEnded={() => setIndex((i) => (i + 1) % items.length)}
+                    onError={(e) => console.error('Video load error:', e)}
                 />
             );
         } else {
