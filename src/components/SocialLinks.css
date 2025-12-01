@@ -1,0 +1,10 @@
+.social-links a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0000FF; /* Change to blue on hover */
+}

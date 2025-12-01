@@ -1,0 +1,3 @@
+- [x] Add footer section in src/App.jsx after the YouTube section with the message "Managed by AK."
+- [x] Add CSS for .footer class in src/styles/App.css: centered, small font, margin-top, etc.
+- [x] Test the site after changes

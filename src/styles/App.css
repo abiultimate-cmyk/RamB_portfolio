@@ -1,0 +1,400 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    position: relative; /* Needed for absolute positioning of children */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    background-color: black; /* Set background to black */
+    display: flex;
+    flex-direction: column; /* Changed from removed justify/align-items */
+    /* Removed: justify-content: center; */
+    /* Removed: align-items: center; */
+}
+
+.background-image-rectangle {
+    width: 100%; /* Example: adjust size as needed */
+    max-width: 1400px;
+    height: 560px; /* Example: adjust size as needed */
+    object-fit: cover;
+    border-radius: 40px;
+    position: absolute; /* To center it */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Below the black rectangle */
+}
+
+.centered-black-rectangle {
+    position: absolute;
+    width: 80%; /* Wide horizontal rectangle */
+    max-width: 900px; /* Limit max width */
+    height: 460px; /* Adjust height as needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black with smooth edges */
+    border-radius: 20px; /* Smooth edges */
+    display: flex;
+    justify-content: center; /* Center profile pic horizontally */
+    align-items: center; /* Center profile pic vertically */
+    /* Removed: flex-direction: column; */ /* Only profile pic inside now */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height */
+    top: 60%; /* Centering the rectangle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* On top of background-image-rectangle */
+}
+
+@media (max-width: 768px) {
+  .centered-black-rectangle {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+.award-banner {
+  text-align: left;
+  position: absolute;
+  top: 240px;
+  left: 130px;
+  padding: 1.5rem;
+  /*background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-left: 4px solid white;*/
+  max-width: 500px;
+  margin: 2rem 0 2rem 2rem;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Mobile adjustments for award banner */
+@media (max-width: 768px) {
+  .award-banner {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-banner {
+    display: none;
+  }
+}
+  
+
+.award-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.award-wins {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.award-film {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+  .award-honor {
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #ccc;
+    font-style: italic;
+    font-weight: 500;
+  }
+.profile-pic {
+    width: 450px; /* Adjust size as needed */
+    height: 450px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    z-index: 1000; /* Ensure it's above other content */
+    border: 2px solid black; /* Optional: add a border around the profile pic */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Soft drop shadow */
+    /* Removed: margin-bottom: 20px; */ /* No longer stacking with text */
+    position: absolute; /* Remove absolute positioning relative to .app */
+    top: 30px;
+    right: 20px;
+    transform: none;
+    
+}
+/* Mobile responsiveness for profile pic */
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 60vw;
+    height: 60vw;
+    max-width: 225px;
+    max-height: 225px;
+    top: 50px;
+    right: -15vw;
+
+
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-pic {
+    width: 60vw;
+    height: 60vw;
+    max-width: 175px;
+    max-height: 175px;
+    top: 50px;
+    right: -15vw;
+  }
+}
+.award-spacer {
+  height: 2rem; /* Adjust vertical space */
+  margin: 1.5rem 0; /* Top/bottom space */
+}
+
+/* Mobile adjustments for award spacer */
+@media (max-width: 768px) {
+  .award-spacer {
+    height: 1rem;
+    margin: 0.75rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-spacer {
+    height: 0.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+
+  .header {
+    background-color: black;
+    padding: 10px 0; /* Add some padding for better appearance */
+    width: 100%; /* Ensure header spans full width */
+    position: absolute; /* Position header absolutely */
+    top: 0; /* Align to the top */
+    left: 0;
+    z-index: 10; /* Ensure it's above the background image and rectangle */
+  }
+
+  /* Mobile header adjustments */
+  @media (max-width: 768px) {
+    .header {
+      position: absolute;
+      top: 0; /* At the top as first element */
+      right: 10px;
+      width: auto;
+      z-index: 1100; /* Above profile pic */
+    }
+  }
+
+.content {
+    position: absolute; /* Position content absolutely */
+    top: 30px; /* Adjust as needed for desired top-left position */
+    left: 20px; /* Adjust as needed for desired top-left position */
+    z-index: 10; /* Ensure it's above the background image */
+    color: white;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 2.5rem;
+    text-align: left; /* Reverted to left */
+    margin-top: 20px; /* Reverted margin */
+    padding-left: 20px; /* Reverted padding */
+    color: white; /* Ensure text is visible */
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 1.2rem; /* smaller than the title */
+    text-align: left; /* Reverted to left */
+    padding-left: 20px; /* Reverted padding */
+    font-style: normal;
+    font-weight: 500;
+    margin-top: -15px; /* Reverted margin */
+}
+
+/* Mobile and tablet adjustments for title and subtitle */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+
+    .subtitle {
+        font-size: .8rem;
+        padding-left: 10px;
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem;
+        margin-top: 5px;
+        padding-left: 5px;
+    }
+
+    .subtitle {
+        font-size: 0.7rem;
+        padding-left: 5px;
+        margin-top: -5px;
+    }
+}
+
+
+
+/* add / update the container and video styles */
+.natrotator-wrapper {
+    width: 300px;               /* size of the black rectangle */
+    height: 400px;              /* size of the black rectangle */
+    background: rgba(0, 0, 0, 0.3); /* Same overlay as background */
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;          /* ensure extra video is clipped */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Optional: add a border around the profile pic */
+    border-radius: 24px;  /* Smooth rounded corners (increased from 6px) */
+    position: relative;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+
+
+.natrotator-wrapper video,
+.natrotator-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;  /* Centers crop */
+    display: block !important;
+    position: absolute;  /* Override any flex positioning */
+    top: 0; left: 0;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    max-width: 200px;
+    word-wrap: break-word;
+    z-index: 10;
+}
+
+.nat-rotator {
+    position: relative;
+    width: 300px; height: 400px; /* Match your wrapper */
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.nat-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+.nat-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.nat-item.fading-out {
+    opacity: 0;
+    z-index: 1;
+}
+
+.nat-item.fading-in {
+    opacity: 1;
+    z-index: 2;
+}
+
+.nat-item.next {
+    opacity: 0;
+    z-index: 2;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  position: absolute;
+  top: 850px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.video-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.video-title {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.mobile-award-section {
+  display: none;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .mobile-award-section {
+    display: block;
+  }
+}
+
+
