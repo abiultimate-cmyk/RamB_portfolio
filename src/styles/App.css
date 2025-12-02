@@ -397,4 +397,13 @@ h1 {
   }
 }
 
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background-color: black;
+}
+
 
