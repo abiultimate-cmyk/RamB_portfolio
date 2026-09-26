@@ -69,7 +69,7 @@ const youtubeVideos = [
 ];
 
 const video1='ugJ7TETZnn0';
-const video2='su5DLWyP4Sw';
+const video2='Tz1XLsFz5RU';
 
 const YouTube = () => {
   const getEmbedUrl = (videoId) => {
